@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest-dark: #0f2d1e;
+  --forest-mid: #1a4f34;
+  --forest-accent: #2e7d52;
+  --cream-light: #fdfaf4;
+  --cream-mid: #f2e4c8;
+  --terra: #c4622d;
+  --sage: #8aab8e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream-light);
+  color: var(--forest-dark);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f2e4c8;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e7d52;
+  border-radius: 3px;
+}
+
+/* Step progress connector */
+.step-connector {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #2e7d52, #e8cfaa);
+  margin: 0 8px;
+  position: relative;
+  top: -14px;
+}
+
+.step-connector.inactive {
+  background: #e8cfaa;
+}
+
+/* Input focus ring */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #2e7d52 !important;
+  box-shadow: 0 0 0 3px rgba(46, 125, 82, 0.15);
+}
+
+/* Product image placeholder gradient */
+.product-img-placeholder {
+  background: linear-gradient(135deg, #dceee1 0%, #e8cfaa 100%);
+}
+
+/* Leaf decoration */
+.leaf-bg::before {
+  content: '';
+  position: fixed;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(46, 125, 82, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.leaf-bg::after {
+  content: '';
+  position: fixed;
+  bottom: -80px;
+  left: -80px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(ellipse, rgba(196, 98, 45, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Animated underline */
+.animated-underline {
+  position: relative;
+}
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--terra);
+  transition: width 0.3s ease;
+}
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(15, 45, 30, 0.12);
+}
+
+/* Button ripple */
+.btn-eco {
+  position: relative;
+  overflow: hidden;
+}
+.btn-eco::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.btn-eco:hover::after {
+  opacity: 1;
+}
+.btn-eco:active {
+  transform: scale(0.98);
+}
+
+/* Staggered animations */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+
+/* Success circle */
+.success-ring {
+  animation: successRing 0.8s ease forwards;
+}
+@keyframes successRing {
+  0% { stroke-dashoffset: 200; }
+  100% { stroke-dashoffset: 0; }
+}
