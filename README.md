@@ -6,7 +6,7 @@ A clean, responsive, multi-step checkout flow built with **Next.js 14 App Router
 
 ## 🚀 Live Demo
 
-> Deploy to Vercel: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/ecoyaan-checkout)
+> Deploy to Vercel: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vaibhav3000/ecoyaan-checkout)
 
 ---
 
