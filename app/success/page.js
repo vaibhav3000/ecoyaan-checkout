@@ -1,9 +1,7 @@
-'use client'
+export const dynamic = 'force-dynamic'
 
-import dynamic from 'next/dynamic'
-
-const SuccessContent = dynamic(() => import('./SuccessContent'), { ssr: false })
+import SuccessClient from './SuccessContent'
 
 export default function SuccessPage() {
-  return <SuccessContent />
+  return <SuccessClient />
 }
